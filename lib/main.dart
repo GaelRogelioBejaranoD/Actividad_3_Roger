@@ -1,43 +1,40 @@
 import 'package:flutter/material.dart';
+// import 'package:bejaranocurso/mi_widgets/mi_tarjeta.dart';
+// import 'package:bejaranocurso/mi_widgets/Dialogo_acerca_de.dart';
+//import 'package:bejaranocurso/mi_widgets/List_Tile.dart';
+// import 'package:bejaranocurso/mi_widgets/constructor_animado.dart';
+// import 'package:bejaranocurso/mi_widgets/Estilo_Texto_Animado.dart';
+// import 'package:bejaranocurso/mi_widgets/BarreraModal.dart';
+import 'package:bejaranocurso/mi_widgets/Modelo_Fisico_Animado.dart';
 
-void main() => runApp(MyApp());
+const Color darkBlue = Color(0xFF12202F);
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+void main() => runApp(const MiTarjeta());
+
+class MiTarjeta extends StatelessWidget {
+  const MiTarjeta({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
+        theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
+        debugShowCheckedModeBanner: false,
+        title: "Flutter Widget Tarjeta card",
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text(
+              "Flutter Bejarano",
+              style: TextStyle(color: Colors.white, fontSize: 32),
+            ),
+            centerTitle: true,
+          ),
+          //body: const LaTarjeta(),
+          // body: const DialogoAcercaDe(),
+          //body: const ListaRoger()),
+          // body: const ConstructorAnimadoRoger(),
+          // body: const TextoAnimadoRoger(),
+          // body: const BarreraModalRoger(),
+          body: const ModeloAnimadoRoger(),
+        ));
   }
 }
